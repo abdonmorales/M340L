@@ -1,0 +1,335 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% TeX-M (r1.0)
+% For my math classes at UT Austin
+% Notes template created by Abdon Morales for the College of Natural Science
+% and for the Department of Mathematics and Computer Science
+% (c) 2019 - 2024 Abdon Morales and the University of Texas at Austin
+% This is a notes template for a LaTeX document using the "article" class for Mathematics (Calculus)
+% at the University of Texas at Austin.
+
+% Last change made: Jan 15, 2024 8:41 PM CST
+
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+% Start of Article customization options and addons (for more help and information reference to Overleaf's guides and docs on Latex.
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{exercise}
+\usepackage{tcolorbox}
+% Math tools
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{tikz} % For charts, mathematical graphs, and etc
+%% Equal symbol for L'Hospital Rule
+\newcommand\LR{\stackrel{\mathclap{\normalfont\mbox{L.R}}}{=}}
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%%% Question creation
+\renewcommand\ExerciseName{Question~}
+\renewcommand\AnswerName{Answer to question}
+\renewcommand\ExerciseHeader{%
+  \noindent\parbox[t]{.18\textwidth}{%
+    \bfseries\large\ExerciseName\ExerciseHeaderNB\hfill}%
+  \parbox[t]{.72\textwidth}{%
+    \centering\bfseries\large%
+    \ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+  \par\medskip
+}
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Introduction to Linear Algebra and Syllabus Rundown}
+\author{Abdon Morales \\ The University of Texas at Austin \\ M 340L \\ Kirk Blazek}
+\date{\today \\ Lecture 1 \& 2}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+\begin{tcolorbox}[width=\textwidth,colback={white},title={Important Dates for the course!!!},colbacktitle=yellow,coltitle=blue]
+\begin{center}
+\textbf{Midterm Exam - June 21st, 2024 (24-hour window, time limit: 1 hour, and 15 minutes)} \\
+\textbf{Final Exam - July 12th, 2024 (3 hours and 40 minutes time limit)}
+\end{center}
+\end{tcolorbox}
+\section*{Basic Terminology and notation}
+$a_1 + a_2 x_2 + ... + a_n x_n = b$ (Linear equation) \\
+$a_1, a_2, ..., a_n, b$ (known constants) \\
+\begin{tcolorbox}[width=\textwidth,colback={white},title={System of linear equations},colbacktitle=yellow,coltitle=blue]
+\begin{center}
+$a_{1\;1} x_1 + a_{1\;2} x_2 + ... a_{1\;n} x_n = b_1$ \\
+$a_{2\;1} x_1 + a_{2\;2} x_2 + ... a_{2\;n} x_n = b_2$ \\
+\hrule
+$a_{m\;1} x_1 + a_{m\;2} x_2 + ... a_{m\;n} x_n = b_m$
+\end{center}
+The solution to this system of equations is ($x_1, x_2, ..., x_n$) which satisfies every equation simultaneously.
+\end{tcolorbox}
+
+\subsection*{Example \#1}
+\begin{align*}
+2x + y &= -1 & 2(4 + 3y) + y &= -1 \\
+x - 3y &= 4 & x &= 4 + 3y \uparrow
+\end{align*}
+Below we will solve for the first system in the system of equation; $2x + y = -1 \equiv 2(4 + 3y) + y = -1$
+\begin{align*}
+2(4 + 3y) + y &= -1 \\
+8 + 6y + y &= -1 \\
+7y &= -9 \\
+y &= - \frac{9}{7}
+\end{align*}
+We then plug in $y$ into our $x=$ system to solve for $x$.
+\begin{align*}
+x &= 4 + 3y \\
+x &= 4 + 3(-\frac{9}{7}) \\
+&= 4 - \frac{27}{7} \\
+&= \frac{1}{7} \\
+\end{align*}
+\textbf{Note!} A \textbf{\textit{solution set}} is the set of all solutions to a system
+
+For this example, our solution set would be $\{ (x,y)\in \R^2 |\:x - y = 3 \}$
+
+\section*{What is a matrix?}
+A matrix is a rectangular grid of number; it can also mean "womb" in Latin.
+\begin{equation}
+A =
+\begin{bmatrix}
+a_{1\;1} & a_{1\;2} & ... & a_{1\;n} \\
+a_{2\;1} & a_{2\;2} & ... & a_{1\;n} \\
+... & ... & ... & ... \\
+a_{n\;1} & ... & ... & a_{m\;n}
+\end{bmatrix}
+\end{equation}
+
+$a_{\text{ij}}$ means the element in the ith row and the jth column.
+
+\subsection*{Matrix anatomy}
+\begin{equation}
+A =
+\begin{bmatrix}
+2 & 0 \\
+-3 & 8 \\
+5 & 7 \\
+\end{bmatrix}
+\end{equation}
+$a_{3\;2} = 7$, while $a_{2\;3} = \text{not defined}$. The size of the matrix is $\text{size}=3\times 2 $ matrix.
+
+The size of a matrix $&= m \times x \\ &= \text{num rows} \times \text{num columns}$
+
+\textbf{Proof of a matrix}
+\begin{align*}
+a_{1\;1} x_1 + a_{1\;2} x_2 + ... + a_{1\;n} x_n &= b_1 \\
+a_{2\;1} x_1 + a_{2\;2} x_2 + ... + a_{2\;n} x_{2} &= b_2 \\
+a_{m\;1} x_1 + ... + a_{m\;n} x_n &= b_m \\
+A=
+\begin{bmatrix}
+a_{1\;1} & a_{1\;2} & ... & a_{1\;n} \\
+a_{2\;1} & a_{2\;2} & ... & a_{2\;n} \\
+... & ... & ... & ... \\
+a_{m\;1} & a_{m\;2} & ... & a_{m\;n}
+\end{bmatrix}
+\leftarrow \text{coefficent matrix} \\
+A=
+\begin{bmatrix}
+a_{1\;1} & ... & a_{1\;n} & b_1 \\
+. & . & . & .\\
+. & . & . & . \\
+. & . & . & . \\
+a_{m\;1} & ... & a_{m\;n} & b_m \\
+\end{bmatrix}
+\leftarrow \text{augmented matrix}
+\end{align*}
+
+\section*{Elementary Row Operations (June 7th)}
+\subsection*{Example \#1}
+\begin{align*}
+-2(x + 3y &= 1) \rightarrow -2x - 6y &= -2 \\
+2x + 5y &= 1 & 2x + 5y &=1 \\
+x + 3 &= 1 & -y = -1 \\
+x =& -2 & y =& 1
+\end{align*}
+\textbf{Solution:} \\
+Solution coordinates: $(-2 , 1)$\\
+The matrices below are augmented matrices!s
+\begin{align*}
+\begin{bmatrix}
+1 & 0 & -2 \\
+0 & 1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 3 & 1 \\
+2 & 5 & 1
+\end{bmatrix}
+\end{align*}
+The solution matrices are know as \textbf{\textit{equivalent systems}} which means \textit{they share the same solution set}
+
+\subsection*{Reduced Row Reduction}
+\begin{enumerate}
+\item Swap the two rows
+\item Multiply a row by a non-zero number
+\item Replace a row by the sum of that row and a multiple of another row
+\end{enumerate}
+
+\begin{align*}
+\text{This linear system is not allowed to be multiplied simultaneously} \\
+-3(2x + 7y = 15) \\
+2(3x - 9y = 84) \\
+\end{align*}
+\begin{gather*}
+\textbf{The goal} \\
+\begin{bmatrix}
+1 & 3 & 1 \\
+2 & 5 & 1
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+1 & 0 & -2 \\
+0 & 1 & 1
+\end{bmatrix}
+\end{gather*}
+
+\subsubsection*{Example \#1}
+\begin{gather*}
+\text{This is an augmented matrix (matrices)}\\
+\begin{bmatrix}
+1 & 3 & 1\\
+2 & 5 & 1
+\end{bmatrix} \rightarrow R_2 - 2R_1
+\begin{bmatrix}
+1 & 3 & 1\\
+0 & -1 & -1
+\end{bmatrix} \rightarrow -R_2
+\begin{bmatrix}
+1 & 3 & 1\\
+0 & 1 & 1
+\end{bmatrix} R_1 - 3R_2
+\end{gather*}
+\textbf{Multiply the row that is changing}\\
+\begin{gather*}
+\begin{bmatrix}
+1 & 0 & -2\\
+0 & 1 & 1
+\end{bmatrix} 
+\begin{align*}
+x = -2 \\ y = 1
+\end{align*}
+\end{gather*}
+
+
+\subsubsection*{Example \#2 (Complex System)}
+% Fix this dog crap
+\begin{gather*}
+\begin{align*}
+-4x -5y - 6z &= -3\\
+-2x -3y -3z &= -2\\
+5x + 7y + 8z &= 5\\
+\end{align*} \rightarrow 
+\begin{bmatrix}
+-4 & -5 & -6 & -3\\
+-2 & -3 & -3 & -2\\
+5 & 7 & 8 & 5
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+1 & 0 & 0 & ?\\
+0 & 1 & 0 & ?\\
+0 & 0 & 1 & ?
+\end{bmatrix}
+\end{gather*}\\
+\begin{gather*}
+\begin{bmatrix}
+-4 & -5 & -6 & -3\\
+-2 & -3 & -3 & -2\\
+5 & 7 & 8 & 5
+\end{bmatrix} R_1 + R_3 \rightarrow
+\begin{bmatrix}
+1 & 2 & 2 & 2\\
+-2 & -3 & -3 & -2\\
+5 & 7 & 8 & 5
+\end{bmatrix} 
+\begin{gather*}
+R_2 + 2R_1\\R_3-5R_1
+\end{gather*}
+\begin{bmatrix}
+1 & 2 & 2 & 2\\
+0 & 1 & 1 & 2\\
+0 & -3 & -2 & -5
+\end{bmatrix} R_3 + 3R_2
+\begin{bmatrix}
+1 & 2 & 2 & 2\\
+0 & 1 & 1 & 2\\
+0 & 0 & 1 & 1
+\end{bmatrix} \leftarrow \text{This is trangular form}\\
+\end{gather*}
+
+\begin{align*}
+x + 2y + 2z &= 2\\
+y + z &= 2\\
+z = 1, x = -2, y = 1
+\end{align*}
+\subsection*{(Row) Echelon Form of a Matrix}
+\begin{enumerate}
+\item The leading number (1st non-zero number going left to right) of any row is to the right of the leading entries above it.
+\item Everything in a column below a leading entry is zero.
+\item Any row of zeros is below all non-zeros rows.
+\end{enumerate}
+
+\subsubsection*{Example \#1}
+\begin{bmatrix}
+2 & 3 & 8 & -7 & 5\\
+0 & 0 & 3 & 6 & 4\\
+0 & 0 & 0 & 2 & 1
+\end{bmatrix} \leftarrow \text{IN \textbf{echelon form!}}\\
+\begin{bmatrix}
+5 & 7 & 3 & 1 & 2\\
+0 & 2 & 4 & 8 & -1\\
+0 & 3 & 6 & 5 & 9
+\end{bmatrix} \leftarrow \text{\textbf{NOT} in echelon form!}\\
+
+\subsection*{Reduced (Row) Echelon Form [Optimal]}
+\textit{Steps 1-3 from REF}
+\begin{enumerate}
+\item Every leading entry is 1
+\item Everything in a column above a leading entry is zero
+\end{enumerate}
+\end{document}

@@ -1,0 +1,278 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% TeX-M (r1.0)
+% For my math classes at UT Austin
+% Notes template created by Abdon Morales for the College of Natural Science
+% and for the Department of Mathematics and Computer Science
+% (c) 2019 - 2024 Abdon Morales and the University of Texas at Austin
+% This is a notes template for a LaTeX document using the "article" class for Mathematics (Calculus)
+% at the University of Texas at Austin.
+
+% Last change made: Jan 15, 2024 8:41 PM CST
+
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+% Start of Article customization options and addons (for more help and information reference to Overleaf's guides and docs on Latex.
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{exercise}
+% Math tools
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz} % For charts, mathematical graphs, and etc
+%% Equal symbol for L'Hospital Rule
+\newcommand\LR{\stackrel{\mathclap{\normalfont\mbox{L.R}}}{=}}
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%%% Question creation
+\renewcommand\ExerciseName{Question~}
+\renewcommand\AnswerName{Answer to question}
+\renewcommand\ExerciseHeader{%
+  \noindent\parbox[t]{.18\textwidth}{%
+    \bfseries\large\ExerciseName\ExerciseHeaderNB\hfill}%
+  \parbox[t]{.72\textwidth}{%
+    \centering\bfseries\large%
+    \ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+  \par\medskip
+}
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Vectors in $\mathbb{R}^n$}
+\author{Abdon Morales \\ The University of Texas at Austin \\ M 340L \\ Kirk Blazek}
+\date{June 10, 2024 \\ Lecture 3}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+A column vector is an $n \times 1$ matrix
+\begin{gather*}
+\text{Linear Algebra} & \text{Physics}\\
+\vec{x}=
+\begin{bmatrix}
+x_1\\
+x_2\\
+...\\
+x_n
+\end{bmatrix} & \vec{v} = \{ v_1, v_2, v_3 \}
+\end{gather*}
+\section*{Vector Addition}
+If $\vec{u}, \vec{v} \in \mathbb{R}^n$, then $\vec{u} + \vec{v}$ is the vector in $\mathbb{R}^n$ whose ith element is $u_i + v_i$.
+\begin{equation}
+\vec{u} + \vec{v} =
+\begin{bmatrix}
+u_1\\
+u_2\\
+...\\
+u_n
+\end{bmatrix} +
+\begin{bmatrix}
+v_1\\
+v_2\\
+...\\
+v_n
+\end{bmatrix} =
+\begin{bmatrix}
+u_1 + v_1\\
+u_2 + v_2\\
+...\\
+u_n + v_n
+\end{bmatrix}
+\end{equation}
+\subsection*{Example \#1}
+\begin{gather*}
+\vec{u} + \vec{v} =
+\begin{bmatrix}
+2\\
+1
+\end{bmatrix} +
+\begin{bmatrix}
+-3\\
+3
+\end{bmatrix} =
+\begin{bmatrix}
+-1\\
+4
+\end{bmatrix}
+\end{gather*}
+The vector addition below cannot be allowed and will be seen as not defined or in other words undefined,
+\begin{align*}
+\begin{bmatrix}
+2\\
+-3\\
+7
+\end{bmatrix} +
+\begin{bmatrix}
+5\\
+1
+\end{bmatrix} &= \text{\textbf{not defined}}\\
++ 8 &= \text{\textbf{not defined}}\\
+\end{align*}
+
+\section*{Scalar Multiplication}
+If $\vec{u} \in \mathbb{R}^n$ and $c \in \mathbb{R}$, then the scalar multiple of $c$ and $\vec{u}$, written as $c\vec{u}$ is the vector in $\mathbb{R}^n$ whose ith component is $cu_i$.
+
+\begin{equation}
+c\vec{u} = c
+\begin{bmatrix}
+u_1\\
+u_2\\
+...\\
+u_n
+\end{bmatrix} =
+\begin{bmatrix}
+cu_1\\
+cu_2\\
+...\\
+cu_n
+\end{bmatrix}
+\end{equation}
+If $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_k \{ $ is a set of vectors in $\mathbb{R}^n$ and $\{ c_1, c_2, ..., c_k \}$ is a set of scalars in $\mathbb{R}$, then
+\begin{equation}
+c_1\vec{v}_1 + c_2\vec{v}_2 + c_3\vec{v}_3 + ... + c_k\vec{v}_k
+\end{equation}
+is the linear combination of the $\vec{v}$'s using the $c$'s as weights.\\
+
+If $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_k \} $ is a set of vectors in $\mathbb{R}^n$, then the span $s = \text{span}\{ \vec{v}_1, ..., \vec{v}_k\} $ is the set of \textbf{\underline{ALL}} linear combination of these vectors.
+
+\subsection*{Example #2}
+\begin{equation}
+\text{span}\{
+\begin{bmatrix}
+1\\
+1\\
+1
+\end{bmatrix}, 
+\begin{bmatrix}
+1\\3\\0
+\end{bmatrix}\} =
+\{ c_1
+\begin{bmatrix}
+1\\1\\1
+\end{bmatrix} + c_2
+\begin{bmatrix}
+1\\3\\0
+\end{bmatrix} | c_1, c_2 \in \mathbb{R}\}
+\end{equation}
+
+\subsection*{Problem Set 1}
+\begin{align*}
+a_{1\;1} x_1 + a_{1\;2} x_2 + ... + a_{1\;n} x_n &= b_1 \\
+a_{2\;1} x_1 + a_{2\;2} x_2 + ... + a_{2\;n} x_{2} &= b_2 \\
+a_{m\;1} x_1 + ... + a_{m\;n} x_n &= b_m
+\end{align*}
+If $A$ is an $m \times x$ matrix and $\vec{x}$ is a vector in $\mathbb{R}^n$ then $A\vec{x}$ is the vector in $\mathbb{R}^n$ which is the linear combination of the columns of $A$ using the components of \vec{x} as weights.
+\begin{equation}
+A\vec{x}=
+\begin{bmatrix}
+\vec{a}_1 & \vec{a}_2 & ... & \vec{a}_n
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\x_2\\...\\x_n
+\end{bmatrix} = x_1\vec{a}_1 + x_2\vec{a}_2 + ... + x_na_n
+\end{equation}
+\subsubsection*{Problem 1}
+\begin{align*}
+\begin{bmatrix}
+-1 & 3 & 2 & 0\\4 & 1 & 0 & -2\\
+0 & 1 & 3 & 1
+\end{bmatrix}
+\begin{bmatrix}
+2\\1\\-1\\1
+\end{bmatrix} &= 2
+\begin{bmatrix}
+-1\\4\\0
+\end{bmatrix} + 1
+\begin{bmatrix}
+3\\1\\1
+\end{bmatrix} - 1
+\begin{bmatrix}
+2\\0\\3
+\end{bmatrix} + 1
+\begin{bmatrix}
+0\\-2\\1
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+-2\\8\\0
+\end{bmatrix} +
+\begin{bmatrix}
+3\\1\\1
+\end{bmatrix} +
+\begin{bmatrix}
+-2\\0\\-3
+\end{bmatrix} +
+\begin{bmatrix}
+0\\-2\\1
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+-1\\7\\-1
+\end{bmatrix}
+\end{align*}
+
+* can be written as $A\vec{x} = b$, can be written as a linear combination of the columns of A?
+
+If $A=
+\begin{bmatrix}
+\vec{a}_1 & \vec{a}_2 & ... & \vec{a}_2
+\end{bmatrix}
+$, is $\vec{b}$ in $\text{span}\{ \vec{a}_1, \vec{a}_2, ..., \vec{a}_n\}$?
+
+% Add the example here, for this definition
+
+Pivot in every row A\vec{x}=\vec{b} will always have a solution.
+
+If $A$ is an $m \times n$ matrix, then the following are equivalent.
+\begin{itemize}
+	\item $\forall \vec{b} \in \mathbb{R}^m$, $A\vec{x}=b$ has a solution
+	\item Each $\vec{b} \in \mathbb{R}^m$ is a linear combination of the columns of A
+	\item The columns of $A$ span $\mathbb{R}^m
+	\item $A$ has a pivot in every row
+\end{itemize}
+\end{document}
