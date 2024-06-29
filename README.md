@@ -3,4 +3,4 @@
 
 This repository holds my notes, textbooks, and other miscellanous items for my Matrices and Matrix Calculations class (M 340L) at UT Austin.
 
-<embed src="M340L.syllabus.pdf" type="application/pdf">
+<image src="M340L.syllabus.pdf">
