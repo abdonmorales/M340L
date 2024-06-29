@@ -2,3 +2,5 @@
 **Summer 2024, Kirk Blazek, University of Texas at Austin**
 
 This repository holds my notes, textbooks, and other miscellanous items for my Matrices and Matrix Calculations class (M 340L) at UT Austin.
+
+<embed src="M340L.syllabus.pdf" type="application/pdf">
