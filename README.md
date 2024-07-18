@@ -9,11 +9,6 @@ This repository holds my notes, textbooks, and other miscellanous items for my M
 ```
 .
 ├── M340L.syllabus.pdf
-├── Matrix Calculations
-│   ├── bin
-│   │   └── Homework3Computations.class
-│   └── src
-│       └── Homework3Computations.java
 ├── README.md
 ├── Week 1
 │   ├── Day One Intro to Linear Algebra.aux
@@ -74,11 +69,18 @@ This repository holds my notes, textbooks, and other miscellanous items for my M
 ├── Week 6
 │   ├── Homework #10 - sections 6.4, 6.5-problems.pdf
 │   └── Least Squares Approximation.pdf
+├── code
+│   ├── Least Squares Approximations.ipynb
+│   └── Matrix Calculations
+│       ├── bin
+│       │   └── Homework3Computations.class
+│       └── src
+│           └── Homework3Computations.java
 └── textbooks
     ├── Introduction to Linear Algebra, 5th Edition.pdf
     └── Linear Algebra and Its Application.pdf
 
-10 directories, 59 files
+11 directories, 60 files
 ```
 
 
