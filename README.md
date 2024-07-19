@@ -5,6 +5,9 @@ This repository holds my notes, textbooks, and other miscellanous items for my M
 
 **Practice Tests and current semester exams will NOT be posted here, at the discretion of the instructor!!**
 
+For a more supplemental learning of this topic, you can find more in [this repository](https://github.com/abdonmorales/lin-alg).
+
+
 ### Directory structure
 ```
 
