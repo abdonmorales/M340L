@@ -1,5 +1,5 @@
 # Matrices and Matrix Calculations (M 340L)
-**Summer 2024, Kirk Blazek, University of Texas at Austin**
+**Summer 2024 (First-term), Kirk Blazek, University of Texas at Austin**
 
 This repository holds my notes, textbooks, and other miscellanous items for my Matrices and Matrix Calculations class (M 340L) at UT Austin.
 
@@ -7,7 +7,7 @@ This repository holds my notes, textbooks, and other miscellanous items for my M
 
 ### Directory structure
 ```
-.
+
 ├── M340L.syllabus.pdf
 ├── README.md
 ├── Week 1
@@ -68,7 +68,9 @@ This repository holds my notes, textbooks, and other miscellanous items for my M
 │   └── Question 10 Part I and II (HW #7).pdf
 ├── Week 6
 │   ├── Homework #10 - sections 6.4, 6.5-problems.pdf
-│   └── Least Squares Approximation.pdf
+│   ├── Least Squares Approximation.pdf
+│   ├── Symmetric Matrices.pdf
+│   └── The Gram-Schmidt Process.pdf
 ├── code
 │   ├── Least Squares Approximations.ipynb
 │   └── Matrix Calculations
@@ -80,8 +82,9 @@ This repository holds my notes, textbooks, and other miscellanous items for my M
     ├── Introduction to Linear Algebra, 5th Edition.pdf
     └── Linear Algebra and Its Application.pdf
 
-11 directories, 60 files
+11 directories, 62 files
 ```
 
-
 <image src="M340L.syllabus.pdf">
+
+(C) 2024 Abdon Morales, The University of Texas at Austin College of Natural Science - Math Dept.
