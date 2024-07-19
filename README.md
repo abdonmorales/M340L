@@ -88,6 +88,4 @@ For a more supplemental learning of this topic, you can find more in [this repos
 11 directories, 62 files
 ```
 
-<image src="M340L.syllabus.pdf">
-
 (C) 2024 Abdon Morales, The University of Texas at Austin College of Natural Science - Math Dept.
