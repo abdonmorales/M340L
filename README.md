@@ -5,7 +5,13 @@ This repository holds my notes, textbooks, and other miscellanous items for my M
 
 **Practice Tests and current semester exams will NOT be posted here, at the discretion of the instructor!!**
 
-For a more supplemental learning of this topic, you can find more in [this repository](https://github.com/abdonmorales/lin-alg).
+For a more supplemental learning of this topic, you can find more in the linalg-mit directory.
+
+To git clone the repository with the submodule, run the following command:
+
+```
+git clone --recurse-submodules git@github.com:abdonmorales/M340L.git
+```
 
 
 ### Directory structure
