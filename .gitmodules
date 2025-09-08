@@ -1,0 +1,3 @@
+[submodule "linalg-mit"]
+	path = linalg-mit
+	url = git@github.com:mitmath/1806.git
